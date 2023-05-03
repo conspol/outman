@@ -1,0 +1,1 @@
+# Outman - the Output Manager.
