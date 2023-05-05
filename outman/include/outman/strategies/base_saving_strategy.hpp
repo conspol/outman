@@ -13,7 +13,7 @@ public:
 
     virtual void SaveAsync(const TData& data, const void* sender) override {
         // Use the thread pool from OutputManager to execute Save
-        OutputManager::Instance()._thread_pool.post([=] { Save(data, const void* sender); });
+        OutputManager::Instance()._thread_pool.post([=] { Save(data, sender); });
     }
 };
 
@@ -38,8 +38,8 @@ public:
     virtual void FlushAsync(const void* sender) override = 0;
 
     virtual void Save(const TData& data, const void* sender) override {
-        AddAsync(data, const void* sender);
-        FlushAsync(const void* sender);
+        AddAsync(data, sender);
+        FlushAsync(sender);
     }
 };
 
