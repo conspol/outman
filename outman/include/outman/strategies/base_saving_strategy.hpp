@@ -2,6 +2,7 @@
 #define BASE_SAVING_STRATEGY_HPP
 
 #include "isaving_strategy.hpp"
+#include "outman/output_manager.hpp"
 
 template <typename TData>
 class BaseSavingStrategy : public IWrappedSyncSavingStrategy<TData> {
