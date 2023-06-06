@@ -4,7 +4,6 @@
 #define BOOST_ASIO_STANDALONE
 
 #include "output_manager.hpp"
-#include "all_strats.hpp" 
 
 namespace outman {
     namespace om {

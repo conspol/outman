@@ -7,7 +7,7 @@
 #include <random>
 #include <thread>
 #include <future>
-#include <filesystem>
+#include <experimental/filesystem>
 
 #include <outman/outman.hpp>
 #include "outman/all_strats.hpp"
@@ -38,8 +38,8 @@ int main() {
 
     for (int i = 1; i <= 10; ++i) {
         // Delete the file if it exists
-        std::filesystem::path file_path("big_csv_file_" + std::to_string(i) + ".csv");
-        std::filesystem::remove(file_path);
+        std::experimental::filesystem::path file_path("big_csv_file_" + std::to_string(i) + ".csv");
+        std::experimental::filesystem::remove(file_path);
 
         auto csv_writer = std::make_shared<AsyncCsvFileStrat<std::string>>(file_path.string());
         auto logging_csv_writer = std::make_shared<AsyncSaveStratLogs<std::string>>(csv_writer, logger);
