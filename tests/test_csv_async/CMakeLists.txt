@@ -13,7 +13,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../outman/include)
 add_executable(csv_async_app main.cpp)
 
 # If your test application has any dependencies, link them here
-target_link_libraries(csv_async_app)
+target_link_libraries(csv_async_app "stdc++fs")
 
 # For VS Profiler 
 # SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/PROFILE")

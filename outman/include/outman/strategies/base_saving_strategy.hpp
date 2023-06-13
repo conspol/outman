@@ -13,7 +13,7 @@ public:
 
     virtual void SaveAsync(const TData& data, const void* sender) override {
         // Use the thread pool from OutputManager to execute Save
-        OutputManager::Instance()._thread_pool.post([=] { Save(data, sender); });
+        boost::asio::post(outman::OutputManager::Instance()._thread_pool, [=] { Save(data, sender); });
     }
 };
 
