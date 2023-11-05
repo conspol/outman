@@ -6,14 +6,11 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Assuming the library is located in the 'outman' folder
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../outman/include)
 
-# Add source files for your test application
 add_executable(csv_async_app main.cpp)
 
-# If your test application has any dependencies, link them here
-target_link_libraries(csv_async_app "stdc++fs")
+target_link_libraries(csv_async_app PRIVATE "stdc++fs" pthread)
 
 # For VS Profiler 
 # SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/PROFILE")
